@@ -1,0 +1,33 @@
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { AuthProvider } from "./components/auth";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
+import RequireAuth from "./components/RequireAuth";
+
+function App() {
+  return (
+    <>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
+        </Routes>
+      </AuthProvider>
+    </>
+  );
+}
+
+export default App;
