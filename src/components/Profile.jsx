@@ -13,8 +13,7 @@ const Profile = () => {
   };
   return (
     <div className="bg">
-      Profile for:{auth.user}
-      <Button onClick={handleLogout}>Logout</Button>
+      Welcome back {auth.user} !<Button onClick={handleLogout}>Logout</Button>
     </div>
   );
 };
