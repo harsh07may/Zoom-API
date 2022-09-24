@@ -43,12 +43,11 @@ function Navbar() {
         </ul>
 
         <ul className="profile">
-          {!auth.user && (
+          {!auth.user ? (
             <NavLink to="/login" style={navStyles}>
               <li>Login</li>
             </NavLink>
-          )}
-          {auth.user && (
+          ) : (
             <li>
               <Button onClick={handleLogout}>Logout</Button>
             </li>

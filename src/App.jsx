@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AuthProvider } from "./components/auth";
+import Form from "./components/Form";
 import Home from "./components/Home";
 import Login from "./components/Login";
 
@@ -30,7 +31,7 @@ function App() {
             path="/form"
             element={
               <RequireAuth>
-                <Profile />
+                <Form />
               </RequireAuth>
             }
           />

@@ -8,10 +8,7 @@ import "./Home.css";
 const Home = () => {
   const auth = useAuth();
   const navigate = useNavigate();
-  const handleLogout = () => {
-    auth.logout();
-    navigate("/");
-  };
+
   return (
     <>
       <div className="Main">
@@ -28,7 +25,6 @@ const Home = () => {
         </div>
       </div>
 
-      {auth.user && <Button onClick={handleLogout}>Logout</Button>}
     </>
   );
 };
