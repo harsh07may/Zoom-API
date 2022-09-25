@@ -129,6 +129,7 @@
       flex-direction: column;
       margin: auto;
       height: 100vh;
+      width: 80vw;
     } 
     .collapse-menu {
       width: 100%;
