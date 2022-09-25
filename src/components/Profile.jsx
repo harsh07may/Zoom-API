@@ -2,9 +2,9 @@ import { Button } from "antd";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./auth";
+import "antd/dist/antd.css";
 import "./Profile.css";
 import { Calendar, Collapse } from "antd";
-import "antd/dist/antd.css";
 import calendarlogo from "../assets/calendarlogo.svg";
 const { Panel } = Collapse;
 const text = `
