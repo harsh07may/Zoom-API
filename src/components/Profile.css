@@ -20,7 +20,6 @@
     border-radius: 10px;
     background-color: #292929;
   }
-  
   .Events {
     display: flex;
     margin: 12px 50px;
@@ -85,9 +84,8 @@
     font-weight: 350;
     font-size: 20px;
     line-height: 27px;
-    color: #ffffff;
+    color: #000;
   }
-  
   .collapse-menu {
     width: 400px;
     margin-bottom: 3%;
@@ -109,8 +107,9 @@
     display: flex;
     flex-direction: row;
   }
-  .calendar-header hr {
-    border: 0.3px solid #000000;
+  hr.new4 {
+    border: 1px solid #fff;
+    background: #fff;
   }
   .site-calendar-demo-card {
     width: 100%;
@@ -135,6 +134,9 @@
       width: 100%;
       margin: auto;
       margin-top: 5%;
+    }
+    .upcoming-events{      /*Newly added*/
+      text-align: center;
     } 
     .upcoming-events-1 {
       display: none;

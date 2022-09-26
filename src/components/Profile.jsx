@@ -27,7 +27,7 @@ const Profile = () => {
         {/* Just the Events */}
 
         <h2>Upcoming Events</h2>
-        <p>Don't miss scheduled events</p>
+        <p style={{color:"white"}}>Don't miss scheduled events</p>
         <div className="scroll">
           <Collapse expandIconPosition="end" className="collapse-menu">
             <Panel header="This is panel header 1" key="1">
@@ -66,7 +66,7 @@ const Profile = () => {
           <img src={calendarlogo} />
           <h3>Calendar</h3>
         </div>
-        <hr />
+        <hr className="new4"/>
         {/* <Calendar style={{borderRadius:5}} className="calendar-inner" /> */}
         {/* <Calendar fullscreen={false} onPanelChange={onPanelChange}  className="calendar-inner"/> */}
         <div className="site-calendar-demo-card">

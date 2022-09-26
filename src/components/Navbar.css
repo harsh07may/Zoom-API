@@ -1,9 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
 a {
     text-decoration: none;
 }
 li {
     list-style: none;
+    font-family: 'Montserrat', sans-serif;
 }
 /*Início das configurações da header*/
 header {
@@ -60,16 +61,13 @@ header {
 .menu-icon {
     display: none;
 }
-.Login-Button {
-    width: 20%;
-    height: 35px;
-    font-weight: 400;
-    border-radius: 5px;
-    border: none;
+.navbar-button{
+    border: 1px solid #FFFFFF;
+    color: #fff;
+    background: none;
   }
-  .Login-Button:hover{
+  .navbar-button:hover{
     border:1px solid #FFFFFF;
-    border-radius: 5px;
     color: #FFFFFF;
     background:none;
   }

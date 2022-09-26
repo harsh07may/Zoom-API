@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+.ant-layout-content {
+  background-color: #c9e2ff;
+}
+
+/* .create {
+  margin-top: 30px;
+} */
+
+.form-card h2 {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 47px;
+  color: #fff;
+}
+
+.form-card p {
+  text-align: center;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff;
+}
+
+.form-card {
+  width: 40%;
+  margin: 30px auto !important;
+}
+
+.Form-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-card {
+  border-radius: 20px !important;
+}
+
+.ant-card{
+  background: rgba(0, 0, 0, 0.23) !important;
+}
+
+.date-picker {
+  width: 200px;
+}
+
+.ant-form-item .ant-form-item-label>label {
+  color: #FFFFFF;
+  font-weight: 400;
+  font-family: 'Raleway';
+}
+
+.ant-input,
+.ant-picker {
+  border-radius: 5px;
+  border: 1px solid #C5C5C5;
+}
+
+.ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  color: #FFFFFF;
+}
+.ant-input:hover{
+  border-color: none !important;
+}
+.submit-button{
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  background: none;
+}
+.submit-button:hover{
+  border:1px solid #FFFFFF;
+  color: #FFFFFF !important;
+  background:none;
+}
+
+@media only screen and (max-width: 850px) {
+  .ant-card-body{
+    flex-direction: column;
+    margin: auto;
+  }
+  .date-picker {
+    width: 200px;
+  }
+  .form-card {
+    width: 80%;
+  }
+}

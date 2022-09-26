@@ -10,7 +10,7 @@ function Navbar() {
   const navStyles = ({ isActive }) => {
     return {
       fontWeight: isActive ? "bold" : "normal",
-      textDecoration: isActive ? "none" : "underline",
+      textDecoration: isActive ? "none" : "none",
     };
   };
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ function Navbar() {
             </NavLink>
           ) : (
             <li>
-              <Button onClick={handleLogout}>Logout</Button>
+              <Button className="navbar-button" onClick={handleLogout}>Logout</Button>
             </li>
           )}
         </ul>
