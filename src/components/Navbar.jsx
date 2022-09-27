@@ -45,7 +45,7 @@ function Navbar() {
         <ul className="profile">
           {!auth.user ? (
             <NavLink to="/login" style={navStyles}>
-              <li>Login</li>
+              <li><Button className="navbar-button">Login</Button></li>
             </NavLink>
           ) : (
             <li>

@@ -1,23 +1,28 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "./auth";
+import { Button } from "antd";
 
 const Login = () => {
-  const [user, setUser] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams("");
   const auth = useAuth();
   const navigate = useNavigate();
-  const handleChange = (e) => {
-    setUser(e.target.value);
-  };
-  const handleClick = () => {
-    auth.login(user);
-    navigate("/", { replace: true });
-  };
+
+  useEffect(() => {
+    const code = searchParams.get("code");
+    if (searchParams != "") {
+      auth.login(searchParams);
+      console.log(code);
+      navigate("/", { replace: true });
+    }
+  }, [searchParams]);
+
 
   return (
     <div>
-      <input value={user} type="text" onChange={handleChange} />
-      <button onClick={handleClick}>Sign Up</button>
+      <Button href="https://zoom.us/oauth/authorize?response_type=code&client_id=sT4WUy87Tm2GZ2RF1YlM1g&redirect_uri=http://localhost:5173/login">
+        Sign Up
+      </Button>
     </div>
   );
 };
