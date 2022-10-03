@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "./auth";
 import { Button } from "antd";
+import axios from "axios";
 
 const Login = () => {
   const [searchParams, setSearchParams] = useSearchParams("");
@@ -11,16 +12,23 @@ const Login = () => {
   useEffect(() => {
     const code = searchParams.get("code");
     if (searchParams != "") {
-      auth.login(searchParams);
       console.log(code);
-      navigate("/", { replace: true });
-    }
-  }, [searchParams]);
 
+      axios
+        .post("https://localhost:7010/login?code=" + code)
+        .then((res) => {
+          if (res.status == 200) {
+            localStorage.setItem("user", res.data);
+            navigate("/profile", { replace: true });
+          }
+        })
+        .catch((error) => console.log(error));
+    }
+  }, []);
 
   return (
     <div>
-      <Button href="https://zoom.us/oauth/authorize?response_type=code&client_id=sT4WUy87Tm2GZ2RF1YlM1g&redirect_uri=http://localhost:5173/login">
+      <Button href="https://zoom.us/oauth/authorize?response_type=code&client_id=nLN5_QppT3Oyckf0AGaJ7A&redirect_uri=http://localhost:5173/login">
         Sign Up
       </Button>
     </div>

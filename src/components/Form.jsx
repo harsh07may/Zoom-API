@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import "./Form.css";
 import { Button, Form, Input, DatePicker, Card } from "antd";
 import moment from "moment-timezone";
+import axios from "axios";
 const layout = {
   labelCol: {
     span: 8,
@@ -26,31 +27,33 @@ const validateMessages = {
 };
 
 const Forms = () => {
-
-  // useEffect(() => {
-  //   return () => {
-  //     document.body.style.backgroundColor = "#c9e2ff";
-  //   };
-  // }, []);
-
   const onFinish = (values) => {
     console.log(values);
+
+    axios
+      .post("https://localhost:7010/createmeeting", values)
+      .then((res) => {
+        console.log(res);
+        window.alert("Successfully added");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
     <div className="create">
       <Card className="form-card">
-      <h2>ADD EVENTS</h2>
-      <p>Come on add an event</p>
+        <h2>ADD EVENTS</h2>
+        <p>Come on add an event</p>
         <Form
           {...layout}
           name="nest-messages"
           onFinish={onFinish}
+          autoComplete="off"
           validateMessages={validateMessages}
           className="Form-container"
         >
           <Form.Item
-            name={["user", "summary"]}
+            name={"topic"}
             label="Event Title"
             rules={[
               {
@@ -61,7 +64,7 @@ const Forms = () => {
             <Input />
           </Form.Item>
           <Form.Item
-            name="description"
+            name="agenda"
             label="Description"
             rules={[
               {
@@ -71,30 +74,12 @@ const Forms = () => {
           >
             <Input.TextArea showCount maxLength={100} />
           </Form.Item>
-          <Form.Item name={["user", "location"]} label="Location">
+          <Form.Item name={"duration"} label="Duration">
             <Input />
           </Form.Item>
           <Form.Item
-            name={["user", "start"]}
+            name={"date"}
             label="Start"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <DatePicker
-              format="MMMM Do YYYY, h:mm"
-              className="date-picker"
-              showTime={{
-                defaultValue: moment("00:00", "HH:mm"),
-              }}
-              onChange={(date, dateString) => setStart(dateString)}
-            />
-          </Form.Item>
-          <Form.Item
-            name={["user", "end"]}
-            label="End"
             rules={[
               {
                 required: true,
@@ -112,10 +97,7 @@ const Forms = () => {
           </Form.Item>
 
           <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-            <Button
-              htmlType="submit"
-              className="submit-button"
-            >
+            <Button htmlType="submit" className="submit-button">
               Add Event
             </Button>
           </Form.Item>

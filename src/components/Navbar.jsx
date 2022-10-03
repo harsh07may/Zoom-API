@@ -45,11 +45,15 @@ function Navbar() {
         <ul className="profile">
           {!auth.user ? (
             <NavLink to="/login" style={navStyles}>
-              <li><Button className="navbar-button">Login</Button></li>
+              <li>
+                <Button className="navbar-button">Login</Button>
+              </li>
             </NavLink>
           ) : (
             <li>
-              <Button className="navbar-button" onClick={handleLogout}>Logout</Button>
+              <Button className="navbar-button" onClick={handleLogout}>
+                Logout
+              </Button>
             </li>
           )}
         </ul>
