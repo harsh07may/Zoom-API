@@ -20,7 +20,7 @@ const Home = () => {
             Whether you’re hosting webinars, virtual conferences, online
             meetings, telehealth appointments, or virtual happy hours, you can
             schedule times or collect new registrants through ZoomTek and sync
-            them to Zoom with our free Scheduler! Welcome back {auth.user}
+            them to Zoom with our free Scheduler! Welcome back
           </p>
         </div>
       </div>

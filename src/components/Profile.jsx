@@ -49,23 +49,26 @@ const Profile = () => {
         <h2>Upcoming Events</h2>
         <p style={{ color: "white" }}>Don't miss scheduled events</p>
         <div className="scroll">
-          {meetings.map((meeting) => (
-            <Collapse
-              key={meeting.id}
-              expandIconPosition="end"
-              className="collapse-menu"
-            >
-              <Panel header={meeting.topic} key="1">
-                <p>Date:{moment(meeting.start_time).format("MMMM Do YYYY")}</p>
-                <p>Time:{moment(meeting.start_time).format(" h:mm:ss a")}</p>
-                <p>ID:{meeting.id}</p>
-                <button onClick={onDelete} value={meeting.id}>
-                  Delete
-                </button>
-                Join URL:<a href={meeting.join_url}>{meeting.join_url}</a>
-              </Panel>
-            </Collapse>
-          ))}
+          {meetings &&
+            meetings.map((meeting) => (
+              <Collapse
+                key={meeting.id}
+                expandIconPosition="end"
+                className="collapse-menu"
+              >
+                <Panel header={meeting.topic} key="1">
+                  <p>
+                    Date:{moment(meeting.start_time).format("MMMM Do YYYY")}
+                  </p>
+                  <p>Time:{moment(meeting.start_time).format(" h:mm:ss a")}</p>
+                  <p>ID:{meeting.id}</p>
+                  <button onClick={onDelete} value={meeting.id}>
+                    Delete
+                  </button>
+                  Join URL:<a href={meeting.join_url}>{meeting.join_url}</a>
+                </Panel>
+              </Collapse>
+            ))}
         </div>
       </div>
       <div className="upcoming-events-1">

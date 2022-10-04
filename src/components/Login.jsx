@@ -19,6 +19,7 @@ const Login = () => {
         .then((res) => {
           if (res.status == 200) {
             localStorage.setItem("user", res.data);
+            auth.login(res.data);
             navigate("/profile", { replace: true });
           }
         })
